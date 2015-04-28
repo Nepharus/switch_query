@@ -2,9 +2,9 @@
 cwd=$(pwd)
 rm $cwd/vlanlist
 count=36
-ip="10.62.2.1"
-baseaddr="$(echo $ip | cut -d. -f1-3)"
-lso="$(echo $ip | cut -d. -f4)"
+ip=10.62.2.1
+lso=${ip##*.}
+baseaddr=${ip%.*}
 
 while [ $count -gt 0 ]
 do
